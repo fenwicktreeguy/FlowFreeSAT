@@ -149,7 +149,7 @@ class CNFSolver(FlowFreeCNFConditions):
                     if( (f,s) not in self.implication_graph[unsatisfied[0].__hash__()]):
                         (uf1,uf2) = satisfied[0]
                         print("key: {}, {}, value: {}, {}".format(f,rep[f],uf1,uf2))
-                        self.implication_graph[ (f,rep[f]).__hash__()].append( (satisfied[0]) )
+                        self.implication_graph[ (f,rep[f]).__hash__()].append( (satisfied[0],self.CDCL_Level) )
     def display_implication_graph(self):
         k = self.implication_graph.keys()
         for i in k:
